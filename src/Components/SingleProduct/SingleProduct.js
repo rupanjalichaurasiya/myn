@@ -1,44 +1,67 @@
 import React from "react";
-import "./Style.scss"
-import Breadcrumb from "./Breadcrumb";
-import SingleProductPage from "./SingleProductPage";
-import SingleProductPage2 from "./SingleProductPage2";
-import SingleProductPage3 from "./SingleProductPage3";
-import ProductOfferTable from "./ProductOfferTable";
-import SingleProductPage4 from "./SingleProductPage4";
-import ProductReview from "./ProductReview";
-import ProductReview2 from "./ProductReview2";
-import ProductQuestion from "./ProductQuestion";
 
-const SingleProduct = () => {
+import Video from "../Video";
+
+ 
+
+
+import Vid1 from "../video/Vid1.mp4";
+
+//import "./SingleProduct.css";
+
+export default function App() {
+  const data = [
+    {
+      channel: "aaa",
+      song: "song-1",
+      url: Vid1,
+      likes: "32",
+      comment: "2",
+      shares: "23",
+    },
+    {
+      channel: "bbb",
+      song: "song-2",
+      url: Vid1,
+      likes: "3",
+      comment: "22",
+      shares: "23",
+    },
+    {
+      channel: "ccc",
+      song: "song-3",
+      url: Vid1,
+      likes: "89",
+      comment: "23",
+      shares: "29",
+    },
+  ];
+
   return (
-    <>
-      <div>
-        <Breadcrumb />
-      </div>
-      <div className="products">
-        <div className="leftCon">
-          <SingleProductPage />
-        </div>
-        <div className="rightCon">
-          <SingleProductPage2 />
-          <SingleProductPage3 />
-          <ProductOfferTable />
-          <SingleProductPage4 />
-          <ProductReview />
-        </div>
-      </div>
+    <div className="App">
+      <center>
+        
+        <h3>Reel</h3>
+        {/*  */}
 
-      <div className="review">
-        <div className="leftCon">
-          <ProductQuestion />
+        <div className="video-container" id="video-container">
+          {/*  */}
+
+          {data.map((list, i) => (
+            <Video
+              key={i}
+              channel={list.channel}
+              song={list.song}
+              url={list.url}
+              likes={list.likes}
+              comment={list.comment}
+              shares={list.shares}
+            />
+          ))}
+
+          {/*  */}
         </div>
-        <div className="rightCon">
-          <ProductReview2 />
-        </div>
-      </div>
-    </>
+      </center>
+    </div>
   );
-};
-
-export default SingleProduct;
+}
