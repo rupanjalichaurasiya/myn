@@ -138,8 +138,8 @@ function App() {
                 </Link>
                 <Link to="/singlepage" className="header--navbar">
                   <Tab
-                    value="singlepage"
-                    label="Single Page"
+                    value="Mstudio"
+                    label="Mstudio"
                     className="header--navbar--nav"
                   />
                 </Link>
