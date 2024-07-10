@@ -14,6 +14,9 @@ import Tab from "@mui/material/Tab";
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
+import Customize from "./Components/WomensProductsPage/LadiesCloths/Customize";
+import CardsObj from "./Components/WomensProductsPage/LadiesCloths/CardsObj";
+
 import {
   Footer,
   Home,
@@ -192,6 +195,8 @@ function App() {
           <Route path="/homeandliving" element={<HomeAndLivinProductsPage />} />
           <Route path="/beauty" element={<BeautyProductsPage />} />
           <Route path="/singlepage" element={<SingleProduct />} />
+          {/* <Route path="/customize/:id" element={<Customize />} /> */}
+          <Route path="/customize/:id" element={<Customize products={CardsObj} />} />
         </Routes>
         <Footer />
       </BrowserRouter>
