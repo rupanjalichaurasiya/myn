@@ -138,7 +138,7 @@ function App() {
                 </Link>
                 <Link to="/singlepage" className="header--navbar">
                   <Tab
-                    value="Mstudio"
+                    value="singlepage"
                     label="Mstudio"
                     className="header--navbar--nav"
                   />
@@ -195,7 +195,6 @@ function App() {
           <Route path="/homeandliving" element={<HomeAndLivinProductsPage />} />
           <Route path="/beauty" element={<BeautyProductsPage />} />
           <Route path="/singlepage" element={<SingleProduct />} />
-          {/* <Route path="/customize/:id" element={<Customize />} /> */}
           <Route path="/customize/:id" element={<Customize products={CardsObj} />} />
         </Routes>
         <Footer />
