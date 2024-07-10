@@ -1,10 +1,6 @@
 import React from "react";
-
 import Video from "../Video";
-
- 
-
-
+import "./Single.css";
 import Vid1 from "../video/Vid1.mp4";
 
 //import "./SingleProduct.css";

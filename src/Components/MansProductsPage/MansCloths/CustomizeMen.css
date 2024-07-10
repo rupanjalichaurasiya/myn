@@ -1,0 +1,32 @@
+
+
+.image-container {
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .main-image {
+    transition: opacity 0.3s ease;
+    width: 100%;
+  }
+  
+  .hover-image {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .image-container:hover .hover-image {
+    opacity: 1;
+  }
+  
+  .image-container:hover .main-image {
+    opacity: 0;
+  }
+  

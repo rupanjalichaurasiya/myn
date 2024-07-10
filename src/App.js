@@ -14,7 +14,8 @@ import Tab from "@mui/material/Tab";
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
-import Customize from "./Components/WomensProductsPage/LadiesCloths/Customize";
+import Customize from "./Components/WomensProductsPage/LadiesCloths/Customize"; // Renamed import for women's customize component
+import CustomizeMen from "./Components/MansProductsPage/MansCloths/CustomizeMen"; // Renamed import for men's customize component
 import CardsObj from "./Components/WomensProductsPage/LadiesCloths/CardsObj";
 
 import {
@@ -26,7 +27,7 @@ import {
   HomeAndLivinProductsPage,
   BeautyProductsPage,
   SingleProduct,
-} from "./Components";
+} from "./Components"; // Assuming all these components are exported from an index file in ./Components
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -57,7 +58,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
     padding: theme.spacing(2, 2, 2, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
     width: "100%",
@@ -80,7 +80,6 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        {/* Header starts */}
         <Box sx={{ flexGrow: 1 }} className="header">
           <AppBar
             position="static"
@@ -95,19 +94,12 @@ function App() {
                 sx={{ mr: 2 }}
               ></IconButton>
               <Link to="/">
-                {" "}
                 <img src={Logo} alt="" width="40" />
               </Link>
-              {/* Navbar starts */}
               <Box sx={{ width: "100%", pl: 5 }}>
                 <Link to="/man" className="header--navbar">
-                  <Tab
-                    value="one"
-                    label="Man"
-                    className="header--navbar--nav"
-                  />
+                  <Tab value="one" label="Man" className="header--navbar--nav" />
                 </Link>
-
                 <Link to="/women" className="header--navbar">
                   <Tab
                     value="women"
@@ -116,11 +108,7 @@ function App() {
                   />
                 </Link>
                 <Link to="/kids" className="header--navbar">
-                  <Tab
-                    value="kids"
-                    label="Kids"
-                    className="header--navbar--nav"
-                  />
+                  <Tab value="kids" label="Kids" className="header--navbar--nav" />
                 </Link>
                 <Link to="/homeandliving" className="header--navbar">
                   <Tab
@@ -130,11 +118,7 @@ function App() {
                   />
                 </Link>
                 <Link to="/beauty" className="header--navbar">
-                  <Tab
-                    value="beauty"
-                    label="Beauty"
-                    className="header--navbar--nav"
-                  />
+                  <Tab value="beauty" label="Beauty" className="header--navbar--nav" />
                 </Link>
                 <Link to="/singlepage" className="header--navbar">
                   <Tab
@@ -144,9 +128,6 @@ function App() {
                   />
                 </Link>
               </Box>
-              {/* Navbar ends */}
-
-              {/* SearchBar Starts */}
               <Box sx={{ flexGrow: 1 }} className="searchInput">
                 <Search>
                   <SearchIconWrapper>
@@ -158,9 +139,6 @@ function App() {
                   />
                 </Search>
               </Box>
-              {/* SearchBar Ends */}
-
-              {/* Notification Starts */}
               <Tabs
                 value={value}
                 onChange={handleChange}
@@ -183,7 +161,6 @@ function App() {
                   size="small"
                 />
               </Tabs>
-              {/* Notification Ends */}
             </Toolbar>
           </AppBar>
         </Box>
@@ -196,6 +173,7 @@ function App() {
           <Route path="/beauty" element={<BeautyProductsPage />} />
           <Route path="/singlepage" element={<SingleProduct />} />
           <Route path="/customize/:id" element={<Customize products={CardsObj} />} />
+          <Route path="/customizemen/:id" element={<CustomizeMen products={CardsObj} />} />
         </Routes>
         <Footer />
       </BrowserRouter>

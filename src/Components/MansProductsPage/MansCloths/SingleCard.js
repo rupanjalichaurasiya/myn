@@ -5,6 +5,19 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
+import { styled } from '@mui/system';
+
+const CustomButton = styled(Button)({
+  backgroundColor: '#FF5722',
+  color: '#fff',
+  '&:hover': {
+    backgroundColor: '#E64A19',
+  },
+  textDecoration: 'none',
+  padding: '10px 20px',
+  borderRadius: '4px',
+});
 
 const SingleCard = ({ multi }) => {
   return (
@@ -53,6 +66,11 @@ const SingleCard = ({ multi }) => {
           >
             <center>Add to Cart</center>
           </Typography>
+          <div>
+            <CustomButton component={Link} to={`/customizemen/${multi.id}`}>
+              Customize
+            </CustomButton>
+          </div>
           <Typography variant="body2" color="text.secondary">
             The best piece of wearing printed Kurti is that you don't require
             additional extras with them. It will go well with printed Kurtis.
