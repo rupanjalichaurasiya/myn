@@ -11,12 +11,13 @@ import { styled } from '@mui/system';
 const CustomButton = styled(Button)({
   backgroundColor: '#FF5722',
   color: '#fff',
+ 
   '&:hover': {
     backgroundColor: '#E64A19',
   },
   textDecoration: 'none',
-  padding: '10px 20px',
-  borderRadius: '4px',
+  padding: '10px 32px',
+  // borderRadius: '4px',
 });
 
 const SingleCard = ({ multi }) => {

@@ -1,15 +1,15 @@
-import React, { useRef, useState, useEffect } from "react";
-import Footers from "./SingleProduct/Footers";
+import React, { useRef, useState, useEffect, forwardRef } from "react";
 import Headers from "./SingleProduct/Headers";
 import "./Video.css";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import ShareIcon from "@mui/icons-material/Share";
 
-export default function Video({ channel, song, url, likes, comment, shares }) {
+const Video = forwardRef(({ channel, song, url, likes, comment, shares }, ref) => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
-  const vidRef = useRef();
+  const localVidRef = useRef();
+  const vidRef = ref || localVidRef;
 
   const toggleVideo = () => {
     if (isVideoPlaying) {
@@ -21,29 +21,18 @@ export default function Video({ channel, song, url, likes, comment, shares }) {
   };
 
   const toggleMute = () => {
-    setIsMuted(!isMuted);
-    vidRef.current.muted = !vidRef.current.muted;
+    setIsMuted((prevMuted) => {
+      const newMuted = !prevMuted;
+      vidRef.current.muted = newMuted;
+      return newMuted;
+    });
   };
 
   useEffect(() => {
-    const scrollHandler = () => {
-      if (vidRef.current) {
-        vidRef.current.pause();
-        setIsVideoPlaying(false);
-      }
-    };
-
-    const scrollContainer = document.getElementById("video-container");
-    if (scrollContainer) {
-      scrollContainer.addEventListener("scroll", scrollHandler);
+    if (vidRef.current) {
+      vidRef.current.muted = isMuted;
     }
-
-    return () => {
-      if (scrollContainer) {
-        scrollContainer.removeEventListener("scroll", scrollHandler);
-      }
-    };
-  }, []);
+  }, [isMuted]);
 
   useEffect(() => {
     if (vidRef.current) {
@@ -81,13 +70,8 @@ export default function Video({ channel, song, url, likes, comment, shares }) {
           </div>
         </div>
       </div>
-      {/* <Footers
-        channel={channel}
-        song={song}
-        likes={likes}
-        comment={comment}
-        shares={shares}
-      /> */}
     </div>
   );
-}
+});
+
+export default Video;

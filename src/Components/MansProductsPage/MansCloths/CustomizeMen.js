@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { TextField, Button, Box, Typography, Grid, CardMedia, CardContent, FormControlLabel, Checkbox } from '@mui/material';
-import './CustomizeMen.css'; // Make sure to import the CSS file
+import './CustomizeMen.css'; 
 
 const Customizemen = ({ products }) => {
   const { id } = useParams();
@@ -79,7 +79,7 @@ const Customizemen = ({ products }) => {
                 <CardMedia
                   component="img"
                   height="800"
-                  image="https://www.signnow.com/preview/367/569/367569207.png"
+                  image="https://images.template.net/122738/male-body-measurement-chart-e0l63.jpg"
                   alt="hover image"
                   className="hover-image"
                   sx={{

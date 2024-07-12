@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { TextField, Button, Box, Typography, Grid, CardMedia, CardContent, FormControlLabel, Checkbox } from '@mui/material';
-import './Customize.css'; // Make sure to import the CSS file
+import './Customize.css'; 
 
 const Customize = ({ products }) => {
   const { id } = useParams();
@@ -79,7 +79,7 @@ const Customize = ({ products }) => {
                 <CardMedia
                   component="img"
                   height="800"
-                  image="https://www.signnow.com/preview/367/569/367569207.png"
+                  image="https://images.template.net/122851/simple-body-measurement-chart-sex7m.jpg"
                   alt="hover image"
                   className="hover-image"
                   sx={{
@@ -97,7 +97,7 @@ const Customize = ({ products }) => {
                   {product.typography}
                 </Typography>
                 <Typography>
-                  {product.Price} <strike>{product.realPrice}</strike>
+                  {product.Price ? `${product.Price} ` : 'Price not available'} <strike>{product.realPrice}</strike>
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   {product.description || 'The best piece of wearing printed Kurti is that you don\'t require additional extras with them. It will go well with printed Kurtis.'}

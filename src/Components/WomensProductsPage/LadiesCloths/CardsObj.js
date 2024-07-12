@@ -6,6 +6,7 @@ const CardsObj = [
     realPrice: "₹5000.00",
     rating: "(576)",
     id: 1,
+    
   },
 
   {

@@ -14,9 +14,11 @@ import Tab from "@mui/material/Tab";
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
-import Customize from "./Components/WomensProductsPage/LadiesCloths/Customize"; // Renamed import for women's customize component
-import CustomizeMen from "./Components/MansProductsPage/MansCloths/CustomizeMen"; // Renamed import for men's customize component
-import CardsObj from "./Components/WomensProductsPage/LadiesCloths/CardsObj";
+import Customize from "./Components/WomensProductsPage/LadiesCloths/Customize";
+import CustomizeMen from "./Components/MansProductsPage/MansCloths/CustomizeMen";
+import CardsObj from "./Components/WomensProductsPage/LadiesCloths/CardsObj"; // Make sure this contains both men's and women's products
+import Dashboard from "./Components/Dashboard/Dashboard";
+import Pear_Body from "./Components/SingleProduct/Pear_Body";
 
 import {
   Footer,
@@ -94,7 +96,7 @@ function App() {
                 sx={{ mr: 2 }}
               ></IconButton>
               <Link to="/">
-                <img src={Logo} alt="" width="40" />
+                <img src={Logo} alt="Logo" width="40" />
               </Link>
               <Box sx={{ width: "100%", pl: 5 }}>
                 <Link to="/man" className="header--navbar">
@@ -144,7 +146,23 @@ function App() {
                 onChange={handleChange}
                 aria-label="icon label tabs example"
                 className="app--Lists"
+                sx={{
+                  "& .MuiTab-root": {
+                    minWidth: 80,
+                    fontSize: "0.75rem",
+                  },
+                  "& .MuiSvgIcon-root": {
+                    fontSize: "1.2rem",
+                  },
+                }}
               >
+                <Tab
+                  icon={<PersonOutlineOutlinedIcon />}
+                  label="Dashboard"
+                  component={Link}
+                  to="/dashboard"
+                  size="small"
+                />
                 <Tab
                   icon={<PersonOutlineOutlinedIcon />}
                   label="Profile"
@@ -174,6 +192,8 @@ function App() {
           <Route path="/singlepage" element={<SingleProduct />} />
           <Route path="/customize/:id" element={<Customize products={CardsObj} />} />
           <Route path="/customizemen/:id" element={<CustomizeMen products={CardsObj} />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/pear_body" element={<Pear_Body />} />
         </Routes>
         <Footer />
       </BrowserRouter>
