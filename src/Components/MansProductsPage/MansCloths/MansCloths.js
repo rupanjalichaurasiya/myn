@@ -1,6 +1,6 @@
 import React from "react";
 import "./MansCloths.scss";
-import CardsObj from "./CardsObj";
+import CardsObjsw from "./CardObjsw";
 import SingleCard from "./SingleCard";
 import Grid from "@mui/material/Grid";
 import { styled } from "@mui/material/styles";
@@ -17,7 +17,7 @@ const MansCloths = () => {
   return (
     <div className="cards">
       <Grid container spacing={4}>
-        {CardsObj.map((obj) => {
+        {CardsObjsw.map((obj) => {
           return (
             <>
               <Grid item xs={3}>

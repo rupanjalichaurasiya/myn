@@ -16,9 +16,13 @@ import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 import Customize from "./Components/WomensProductsPage/LadiesCloths/Customize";
 import CustomizeMen from "./Components/MansProductsPage/MansCloths/CustomizeMen";
-import CardsObj from "./Components/WomensProductsPage/LadiesCloths/CardsObj"; // Make sure this contains both men's and women's products
+import CardsObj from "./Components/WomensProductsPage/LadiesCloths/CardsObj"; 
+import CardsObjsw from "./Components/MansProductsPage/MansCloths/CardObjsw";// Make sure this contains both men's and women's products
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Pear_Body from "./Components/SingleProduct/Pear_Body";
+import Style_Tips from "./Components/WomensProductsPage/LadiesCloths/Style_Tips";
+import Tall_and_Skinny from "./Components/SingleProduct/Tall_and_Skinny";
+import Rectangle_Body from "./Components/SingleProduct/Rectangle_Body";
 
 import {
   Footer,
@@ -191,9 +195,12 @@ function App() {
           <Route path="/beauty" element={<BeautyProductsPage />} />
           <Route path="/singlepage" element={<SingleProduct />} />
           <Route path="/customize/:id" element={<Customize products={CardsObj} />} />
-          <Route path="/customizemen/:id" element={<CustomizeMen products={CardsObj} />} />
+          <Route path="/customizemen/:id" element={<CustomizeMen products={CardsObjsw} />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/pear_body" element={<Pear_Body />} />
+          <Route path="/style-tips" element={<Style_Tips />} />
+          <Route path="/tall_and_skinny" element={<Tall_and_Skinny/>} />
+          <Route path="/rectangle_body" element={<Rectangle_Body />} />
         </Routes>
         <Footer />
       </BrowserRouter>

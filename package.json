@@ -29,6 +29,7 @@
     "react-scripts": "^4.0.3",
     "react-style": "^0.5.5",
     "recharts": "^2.12.7",
+    "sweetalert2": "^11.12.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

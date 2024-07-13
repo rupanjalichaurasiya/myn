@@ -1,7 +1,7 @@
 const CardsObj = [
   {
-    imageURL: "../Images/dress5.png",
-    typography: "Angrakha kurti",
+    imageURL: "https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/22804142/2023/4/18/df23f379-507a-4875-aee8-2af42dd61f3a1681815764966HighStarWomenGreyClassicTailoredFitOpaqueStripedPartyShirt1.jpg",
+    typography: "Formal Shirt",
     Price: "RS : 1500.00",
     realPrice: "₹5000.00",
     rating: "(576)",
@@ -10,8 +10,8 @@ const CardsObj = [
   },
 
   {
-    imageURL: process.env.PUBLIC_URL + "../Images/dress11.png",
-    typography: "Printed kurti",
+    imageURL: "https://m.media-amazon.com/images/I/51C-9k6OCGL._SY741_.jpg",
+    typography: "Bodycon",
     Price: "RS : 999.00",
     realPrice: "₹1500.00",
     rating: "(432)",

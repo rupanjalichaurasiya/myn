@@ -78,10 +78,10 @@ function Layout() {
                 </div>
                 <div className='card'>
                     <div className='card-inner'>
-                        <h3>CATEGORIES</h3>
+                        <h3>EARNINGS</h3>
                         <BsFillGrid3X3GapFill className='card_icon' />
                     </div>
-                    <h1>12</h1>
+                    <h1>12000</h1>
                 </div>
                 <div className='card'>
                     <div className='card-inner'>
@@ -92,7 +92,7 @@ function Layout() {
                 </div>
                 <div className='card'>
                     <div className='card-inner'>
-                        <h3>ALERTS</h3>
+                        <h3>Videos</h3>
                         <BsFillBellFill className='card_icon' />
                     </div>
                     <h1>42</h1>

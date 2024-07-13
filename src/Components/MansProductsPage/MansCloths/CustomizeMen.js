@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { TextField, Button, Box, Typography, Grid, CardMedia, CardContent, FormControlLabel, Checkbox } from '@mui/material';
+import Swal from 'sweetalert2';
 import './CustomizeMen.css'; 
 
 const Customizemen = ({ products }) => {
@@ -42,7 +43,13 @@ const Customizemen = ({ products }) => {
     // Handle form submission logic here
     console.log('Submitted measurements:', measurements);
     console.log('Checkboxes:', checked);
-    alert("Your customization request has been submitted! Our team will confirm if customization is possible and notify you within 1-2 days. Thank you for embracing body positivity!");
+
+    Swal.fire({
+      title: 'Customization Request Submitted!',
+      text: 'Your customization request has been submitted! Our team will confirm if customization is possible and notify you within 1-2 days. Thank you for embracing body positivity!',
+      icon: 'success',
+      confirmButtonText: 'OK'
+    });
   };
 
   return (

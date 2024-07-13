@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { TextField, Button, Box, Typography, Grid, CardMedia, CardContent, FormControlLabel, Checkbox } from '@mui/material';
+import Swal from 'sweetalert2';
 import './Customize.css'; 
 
 const Customize = ({ products }) => {
@@ -42,7 +43,13 @@ const Customize = ({ products }) => {
     // Handle form submission logic here
     console.log('Submitted measurements:', measurements);
     console.log('Checkboxes:', checked);
-    alert("Your customization request has been submitted! Our team will confirm if customization is possible and notify you within 1-2 days. Thank you for embracing body positivity!");
+    
+    Swal.fire({
+      title: 'Success!',
+      text: 'Your customization request has been submitted! Our team will confirm if customization is possible and notify you within 1-2 days. Thank you for embracing body positivity!',
+      icon: 'success',
+      confirmButtonText: 'OK'
+    });
   };
 
   return (
@@ -97,7 +104,7 @@ const Customize = ({ products }) => {
                   {product.typography}
                 </Typography>
                 <Typography>
-                  {product.Price ? `${product.Price} ` : 'Price not available'} <strike>{product.realPrice}</strike>
+                  {product.Price ? `${product.Price}` : 'Price not available'} <strike>{product.realPrice}</strike>
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   {product.description || 'The best piece of wearing printed Kurti is that you don\'t require additional extras with them. It will go well with printed Kurtis.'}

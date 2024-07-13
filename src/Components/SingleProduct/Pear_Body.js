@@ -19,7 +19,7 @@ export default function Pear_Body() {
 
   return (
     <>
-      <h4 style={{ textAlign: 'center' }}>Pear Body</h4>
+      <h1 style={{ textAlign: 'center' }}>Pear Body</h1>
       <div className="Apps">
         <center>
           <div className="video-container" id="video-container">
